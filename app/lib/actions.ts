@@ -33,12 +33,12 @@ export async function createInvoice(formData: FormData) {
       VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
     `;
     
-    revalidatePath('/dashboard/invoices');
+    revalidatePath('/dashboard/invoices',);
     
-    redirect('/dashboard/invoices')
+    redirect('/dashboard/invoices', RedirectType.replace)
     
   } catch (error) {
     console.error('stack::', error)
-    redirect('/dashboard/invoices')
+    redirect('/dashboard/invoices', RedirectType.replace)
   }
 }

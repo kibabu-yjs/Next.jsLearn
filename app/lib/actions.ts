@@ -18,7 +18,7 @@ const CreateInvoice = FormSchema.omit({ id: true, date: true });
 
 export async function createInvoice(formData: FormData) {
   
-  try {
+  
     const {customerId, amount, status} = CreateInvoice.parse({
       customerId: formData.get('customerId'),
       amount: formData.get('amount'),
@@ -37,8 +37,5 @@ export async function createInvoice(formData: FormData) {
     
     redirect('/dashboard/invoices')
     
-  } catch (error) {
-    console.error('stack::', error)
-    redirect('/dashboard/invoices')
-  }
+  
 }

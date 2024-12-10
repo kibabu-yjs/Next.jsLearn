@@ -35,10 +35,10 @@ export async function createInvoice(formData: FormData) {
     
     revalidatePath('/dashboard/invoices',);
     
-    redirect('/dashboard/invoices', RedirectType.replace)
+    redirect('/dashboard/invoices')
     
   } catch (error) {
     console.error('stack::', error)
-    redirect('/dashboard/invoices', RedirectType.replace)
+    redirect('/dashboard/invoices')
   }
 }

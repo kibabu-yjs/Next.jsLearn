@@ -33,7 +33,8 @@ export async function createInvoice(formData: FormData) {
     `;
     
     revalidatePath('/dashboard/invoices');
-    redirect('/dashboard/invoices')
+    redirect('/')
+    // redirect('/dashboard/invoices')
 
   } catch (error) {
     console.error('stack::', error)
